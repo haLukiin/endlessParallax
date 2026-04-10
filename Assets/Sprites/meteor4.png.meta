@@ -1,0 +1,637 @@
+fileFormatVersion: 2
+guid: b07a828f8ce2e6448928bf96aa6b7904
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1825275754969739170
+    second: meteor4_0
+  - first:
+      213: 5054090670381717018
+    second: meteor4_1
+  - first:
+      213: -2509924947611280103
+    second: meteor4_2
+  - first:
+      213: 135283165983522668
+    second: meteor4_3
+  - first:
+      213: 3360052052731208800
+    second: meteor4_4
+  - first:
+      213: -8757324718870289660
+    second: meteor4_5
+  - first:
+      213: -4163161533812933879
+    second: meteor4_6
+  - first:
+      213: -1681068091071468499
+    second: meteor4_7
+  - first:
+      213: 6257791414703052972
+    second: meteor4_8
+  - first:
+      213: 1533900399775942126
+    second: meteor4_9
+  - first:
+      213: 1464801079547596454
+    second: meteor4_10
+  - first:
+      213: -1372330311808503921
+    second: meteor4_11
+  - first:
+      213: 6812698065908735388
+    second: meteor4_12
+  - first:
+      213: 2278951554684797565
+    second: meteor4_13
+  - first:
+      213: -1317765297212751052
+    second: meteor4_14
+  - first:
+      213: -4699770583765147003
+    second: meteor4_15
+  - first:
+      213: 5349375528534004715
+    second: meteor4_16
+  - first:
+      213: -3268459477196752684
+    second: meteor4_17
+  - first:
+      213: -8281011801274198578
+    second: meteor4_18
+  - first:
+      213: 7920230835415820354
+    second: meteor4_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: meteor4_0
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 1357
+        width: 87
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5055ef1f515ba6e0800000000000000
+      internalID: -1825275754969739170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meteor4_1
+      rect:
+        serializedVersion: 2
+        x: 2255
+        y: 1070
+        width: 348
+        height: 1007
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a16d7bedfacb32640800000000000000
+      internalID: 5054090670381717018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meteor4_2
+      rect:
+        serializedVersion: 2
+        x: 3772
+        y: 1131
+        width: 518
+        height: 740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91d1dbcee84fa2dd0800000000000000
+      internalID: -2509924947611280103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meteor4_3
+      rect:
+        serializedVersion: 2
+        x: 5837
+        y: 305
+        width: 1230
+        height: 1798
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6fb98c925f90e100800000000000000
+      internalID: 135283165983522668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meteor4_4
+      rect:
+        serializedVersion: 2
+        x: 7439
+        y: 1365
+        width: 501
+        height: 922
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 064add52a8d41ae20800000000000000
+      internalID: 3360052052731208800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meteor4_5
+      rect:
+        serializedVersion: 2
+        x: 7178
+        y: 1295
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4032df4019bb77680800000000000000
+      internalID: -8757324718870289660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meteor4_6
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 1281
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90b728274aa7936c0800000000000000
+      internalID: -4163161533812933879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meteor4_7
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 1288
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2ce0745a75aba8e0800000000000000
+      internalID: -1681068091071468499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meteor4_8
+      rect:
+        serializedVersion: 2
+        x: 5245
+        y: 953
+        width: 176
+        height: 265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca85ddfe22428d650800000000000000
+      internalID: 6257791414703052972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meteor4_9
+      rect:
+        serializedVersion: 2
+        x: 5602
+        y: 1213
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee589716942894510800000000000000
+      internalID: 1533900399775942126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meteor4_10
+      rect:
+        serializedVersion: 2
+        x: 3062
+        y: 1157
+        width: 158
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ae0b0d22d4045410800000000000000
+      internalID: 1464801079547596454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meteor4_11
+      rect:
+        serializedVersion: 2
+        x: 3606
+        y: 1030
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8f27223ad084fce0800000000000000
+      internalID: -1372330311808503921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meteor4_12
+      rect:
+        serializedVersion: 2
+        x: 5159
+        y: 888
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9d1b74bbc09b8e50800000000000000
+      internalID: 6812698065908735388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meteor4_13
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 719
+        width: 140
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d72cf455d5670af10800000000000000
+      internalID: 2278951554684797565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meteor4_14
+      rect:
+        serializedVersion: 2
+        x: 2818
+        y: 615
+        width: 49
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4330c4aa17b56bde0800000000000000
+      internalID: -1317765297212751052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meteor4_15
+      rect:
+        serializedVersion: 2
+        x: 5871
+        y: 613
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58229d4fd8f07ceb0800000000000000
+      internalID: -4699770583765147003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meteor4_16
+      rect:
+        serializedVersion: 2
+        x: 6457
+        y: 204
+        width: 307
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be3df6473bccc3a40800000000000000
+      internalID: 5349375528534004715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meteor4_17
+      rect:
+        serializedVersion: 2
+        x: 5789
+        y: 578
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d8bdea2c6914a2d0800000000000000
+      internalID: -3268459477196752684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meteor4_18
+      rect:
+        serializedVersion: 2
+        x: 2405
+        y: 243
+        width: 130
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec5db3434afe31d80800000000000000
+      internalID: -8281011801274198578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meteor4_19
+      rect:
+        serializedVersion: 2
+        x: 4230
+        y: 300
+        width: 81
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2482e0c4bff4aed60800000000000000
+      internalID: 7920230835415820354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      meteor4_0: -1825275754969739170
+      meteor4_1: 5054090670381717018
+      meteor4_10: 1464801079547596454
+      meteor4_11: -1372330311808503921
+      meteor4_12: 6812698065908735388
+      meteor4_13: 2278951554684797565
+      meteor4_14: -1317765297212751052
+      meteor4_15: -4699770583765147003
+      meteor4_16: 5349375528534004715
+      meteor4_17: -3268459477196752684
+      meteor4_18: -8281011801274198578
+      meteor4_19: 7920230835415820354
+      meteor4_2: -2509924947611280103
+      meteor4_3: 135283165983522668
+      meteor4_4: 3360052052731208800
+      meteor4_5: -8757324718870289660
+      meteor4_6: -4163161533812933879
+      meteor4_7: -1681068091071468499
+      meteor4_8: 6257791414703052972
+      meteor4_9: 1533900399775942126
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

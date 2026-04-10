@@ -1,0 +1,269 @@
+fileFormatVersion: 2
+guid: 2bf3fdc9fdb198b488ad9eeaee86083c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7952048521956057141
+    second: dopeassmonster_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: dopeassmonster_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -427, y: 227}
+        - {x: -439, y: 222}
+        - {x: -453, y: 225}
+        - {x: -472, y: 213}
+        - {x: -481, y: 189}
+        - {x: -493, y: 176}
+        - {x: -506, y: 166}
+        - {x: -509, y: 136}
+        - {x: -510, y: 120}
+        - {x: -510, y: -512}
+        - {x: 512, y: -509}
+        - {x: 512, y: -12}
+        - {x: 494, y: -4}
+        - {x: 477, y: -2}
+        - {x: 466, y: 2}
+        - {x: 442, y: 25}
+        - {x: 418, y: 53}
+        - {x: 395, y: 81}
+        - {x: 374, y: 107}
+        - {x: 384, y: 139}
+        - {x: 378, y: 167}
+        - {x: 371, y: 191}
+        - {x: 373, y: 208}
+        - {x: 368, y: 219}
+        - {x: 360, y: 231}
+        - {x: 365, y: 247}
+        - {x: 368, y: 263}
+        - {x: 370, y: 283}
+        - {x: 372, y: 299}
+        - {x: 367, y: 308}
+        - {x: 363, y: 300}
+        - {x: 340, y: 284}
+        - {x: 322, y: 282}
+        - {x: 316, y: 276}
+        - {x: 292, y: 259}
+        - {x: 267, y: 242}
+        - {x: 252, y: 241}
+        - {x: 269, y: 256}
+        - {x: 272, y: 269}
+        - {x: 271, y: 281}
+        - {x: 264, y: 288}
+        - {x: 251, y: 294}
+        - {x: 253, y: 299}
+        - {x: 258, y: 318}
+        - {x: 266, y: 336}
+        - {x: 271, y: 360}
+        - {x: 268, y: 387}
+        - {x: 262, y: 415}
+        - {x: 254, y: 439}
+        - {x: 250, y: 451}
+        - {x: 241, y: 449}
+        - {x: 229, y: 453}
+        - {x: 215, y: 440}
+        - {x: 201, y: 415}
+        - {x: 187, y: 396}
+        - {x: 174, y: 395}
+        - {x: 164, y: 383}
+        - {x: 156, y: 384}
+        - {x: 153, y: 404}
+        - {x: 141, y: 418}
+        - {x: 122, y: 430}
+        - {x: 102, y: 437}
+        - {x: 86, y: 437}
+        - {x: 79, y: 434}
+        - {x: 73, y: 433}
+        - {x: 63, y: 422}
+        - {x: 72, y: 389}
+        - {x: 66, y: 379}
+        - {x: 53, y: 380}
+        - {x: 48, y: 389}
+        - {x: 38, y: 374}
+        - {x: 28, y: 393}
+        - {x: 21, y: 390}
+        - {x: 19, y: 376}
+        - {x: 14, y: 367}
+        - {x: 5, y: 377}
+        - {x: -4, y: 379}
+        - {x: -16, y: 390}
+        - {x: -18, y: 403}
+        - {x: -33, y: 411}
+        - {x: -42, y: 404}
+        - {x: -52, y: 411}
+        - {x: -77, y: 465}
+        - {x: -88, y: 462}
+        - {x: -100, y: 422}
+        - {x: -120, y: 440}
+        - {x: -140, y: 456}
+        - {x: -156, y: 471}
+        - {x: -163, y: 470}
+        - {x: -181, y: 480}
+        - {x: -194, y: 479}
+        - {x: -212, y: 473}
+        - {x: -222, y: 467}
+        - {x: -234, y: 457}
+        - {x: -233, y: 450}
+        - {x: -213, y: 450}
+        - {x: -197, y: 446}
+        - {x: -189, y: 432}
+        - {x: -187, y: 415}
+        - {x: -190, y: 401}
+        - {x: -205, y: 387}
+        - {x: -215, y: 399}
+        - {x: -229, y: 409}
+        - {x: -243, y: 414}
+        - {x: -256, y: 409}
+        - {x: -269, y: 398}
+        - {x: -266, y: 387}
+        - {x: -259, y: 368}
+        - {x: -268, y: 355}
+        - {x: -283, y: 364}
+        - {x: -289, y: 357}
+        - {x: -276, y: 328}
+        - {x: -288, y: 321}
+        - {x: -294, y: 302}
+        - {x: -314, y: 313}
+        - {x: -318, y: 307}
+        - {x: -323, y: 314}
+        - {x: -331, y: 309}
+        - {x: -325, y: 290}
+        - {x: -337, y: 279}
+        - {x: -351, y: 290}
+        - {x: -369, y: 306}
+        - {x: -375, y: 298}
+        - {x: -384, y: 282}
+        - {x: -396, y: 266}
+        - {x: -413, y: 254}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5306cdbbff95b5e60800000000000000
+      internalID: 7952048521956057141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 27dcf0a83ac5fcf4eb32ee13c8c71168
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      dopeassmonster_0: 7952048521956057141
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
