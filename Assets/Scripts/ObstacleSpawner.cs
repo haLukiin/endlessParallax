@@ -6,7 +6,7 @@ public class ObstacleSpawner : MonoBehaviour
     public float spawnInterval = 2f;
     public float heightRange = 2.5f;
 
-    public float spawnX = 10f;
+    public float spawnOffset = 15f; // Distance from camera center
     private float timer = 0f;
 
     void Start()
@@ -33,7 +33,8 @@ public class ObstacleSpawner : MonoBehaviour
     void SpawnObstacle()
     {
         float randomY = Random.Range(-heightRange, heightRange);
-        Vector3 spawnPos = new Vector3(spawnX, randomY, 0);
+        float cameraX = Camera.main != null ? Camera.main.transform.position.x : transform.position.x;
+        Vector3 spawnPos = new Vector3(cameraX + spawnOffset, randomY, 0);
         Instantiate(obstaclePrefab, spawnPos, Quaternion.identity);
     }
 }

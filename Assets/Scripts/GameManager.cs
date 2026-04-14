@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("UI References")]
     public GameObject gameOverCanvas; // Full Canvas
+    public CanvasGroup gameOverCanvasGroup; // Add this for smooth fading
     public TMP_Text quitText;         // "Press Escape to Quit"
     public TMP_Text restartText;      // "Press Space to Restart"
     public TMP_Text scoreText;        // Text to display current score
@@ -24,9 +25,10 @@ public class GameManager : MonoBehaviour
     public float gameOverDelay = 1.5f;   // How long to wait before showing Game Over screen
 
     [Header("Difficulty Scaling")]
-    public float speedIncreaseRate = 0.02f; // How much the speed multiplier increases per second
-    public float maxSpeedMultiplier = 3f;    // The maximum speed multiplier
-    public float speedMultiplier { get; private set; } = 1f;
+    public float startSpeedMultiplier = 0.5f; // Start at half speed
+    public float speedIncreaseRate = 0.04f;   // How much the speed increases per second
+    public float maxSpeedMultiplier = 4f;     // Higher max speed for more challenge
+    public float speedMultiplier { get; private set; } = 0.5f;
 
     public static GameManager Instance { get; private set; }
 
@@ -44,6 +46,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        // Reset speed to starting value
+        speedMultiplier = startSpeedMultiplier;
+
         // Reset time scale in case it was left at 0 or something else
         Time.timeScale = 1f;
 
@@ -148,7 +153,8 @@ public class GameManager : MonoBehaviour
             m.GetType().Name.Contains("Move") || 
             m.GetType().Name.Contains("Scroll") || 
             m.GetType().Name.Contains("Background") ||
-            m.GetType().Name.Contains("SeamCover")
+            m.GetType().Name.Contains("SeamCover") ||
+            m.GetType().Name.Contains("Parallax")
         );
 
         foreach (var m in movers)
@@ -202,7 +208,20 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(gameOverDelay);
 
         if (gameOverCanvas != null)
+        {
             gameOverCanvas.SetActive(true);
+
+            // Smooth fade-in if CanvasGroup is assigned
+            if (gameOverCanvasGroup != null)
+            {
+                gameOverCanvasGroup.alpha = 0f;
+                while (gameOverCanvasGroup.alpha < 1f)
+                {
+                    gameOverCanvasGroup.alpha += Time.unscaledDeltaTime * 2f; // Fade in over 0.5s
+                    yield return null;
+                }
+            }
+        }
 
         if (quitText != null)
             quitText.gameObject.SetActive(true);

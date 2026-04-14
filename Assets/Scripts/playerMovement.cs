@@ -3,19 +3,23 @@ using System.Linq;
 
 public class playerMovement : MonoBehaviour
 {
+    [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 8f;
     [SerializeField] private float rotationSpeed = 5f;
+    [SerializeField] private bool useRotation = false; 
 
     private Rigidbody2D rb;
+    private Animator anim; // Lägg till Animator
     private bool isDead = false;
 
     [Header("References")]
-    public GameManager gameManager; // assign in Inspector
-    public GameObject explosionPrefab; // Reference to the explosion prefab
+    public GameManager gameManager;
+    public GameObject explosionPrefab;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>(); // Hämta Animator vid start
     }
 
     void Update()
@@ -23,7 +27,7 @@ public class playerMovement : MonoBehaviour
         if (!isDead)
         {
             Flymovement();
-            RotatePlayer();
+            if (useRotation) RotatePlayer();
         }
     }
 
@@ -32,8 +36,23 @@ public class playerMovement : MonoBehaviour
         if (gameManager == null) return;
         if (gameManager.IsCountingDown) return;
 
+        float currentMultiplier = GameManager.Instance != null ? GameManager.Instance.speedMultiplier : 1f;
+        float horizontalSpeed = moveSpeed * currentMultiplier;
+
         if (Input.GetKeyDown(KeyCode.Space))
-            rb.linearVelocity = Vector2.up * jumpForce;
+        {
+            rb.linearVelocity = new Vector2(horizontalSpeed, jumpForce);
+            
+            // Trigga ett enstaka vingslag
+            if (anim != null)
+            {
+                anim.SetTrigger("Flap");
+            }
+        }
+        else
+        {
+            rb.linearVelocity = new Vector2(horizontalSpeed, rb.linearVelocity.y);
+        }
     }
 
     void RotatePlayer()
@@ -78,7 +97,7 @@ public class playerMovement : MonoBehaviour
             foreach (var script in allScripts)
             {
                 string name = script.GetType().Name;
-                if (name.Contains("Background") || name.Contains("Scroll"))
+                if (name.Contains("Background") || name.Contains("Scroll") || name.Contains("Parallax"))
                 {
                     cam.ParentToCamera(script.gameObject);
                 }

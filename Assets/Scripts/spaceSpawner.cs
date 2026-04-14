@@ -4,8 +4,8 @@ public class SpaceSpawner : MonoBehaviour
 {
     public GameObject[] spaceObjects;
 
-    public float minX = 18f;
-    public float maxX = 22f;
+    public float minSpawnOffset = 18f;
+    public float maxSpawnOffset = 22f;
 
     public float minY = -4f;
     public float maxY = 4f;
@@ -49,7 +49,9 @@ public class SpaceSpawner : MonoBehaviour
 
         GameObject prefab = spaceObjects[currentIndex];
 
-        float x = Random.Range(maxX - 1f, maxX);
+        float cameraX = Camera.main != null ? Camera.main.transform.position.x : transform.position.x;
+        float x = cameraX + Random.Range(minSpawnOffset, maxSpawnOffset);
+
         float segmentHeight = (maxY - minY) / spaceObjects.Length;
         float yMin = minY + (currentIndex * segmentHeight);
         float yMax = yMin + segmentHeight;

@@ -2,30 +2,45 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+    public Transform target;
+    public Vector3 offset = new Vector3(-3f, 0, 0); // Negative = Player on Right, Positive = Player on Left
     public float smoothSpeed = 5f;
-    private bool isFollowing = false;
-    private Vector3 targetPosition;
-    private float originalZ;
+
+    private bool isFollowingDeathPoint = false;
+    private Vector3 deathTargetPosition;
 
     void Start()
     {
-        originalZ = transform.position.x; // We use Z for 2D, but camera is at -10 usually
+        if (target == null)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null) target = player.transform;
+        }
     }
 
     void LateUpdate()
     {
-        if (isFollowing)
+        if (isFollowingDeathPoint)
         {
-            // Keep original Z so we don't move into the 2D plane
-            Vector3 desiredPosition = new Vector3(targetPosition.x, targetPosition.y, transform.position.z);
+            // Focus on death point (keep smoothing here)
+            Vector3 desiredPosition = new Vector3(deathTargetPosition.x, deathTargetPosition.y, transform.position.z);
             transform.position = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+        }
+        else if (target != null)
+        {
+            // Follow player EXACTLY on X axis to prevent parallax jitter
+            // But we can still lerp the Y axis if you want it smooth vertically
+            float targetX = target.position.x + offset.x;
+            
+            // We set X directly for perfect sync
+            transform.position = new Vector3(targetX, transform.position.y, transform.position.z);
         }
     }
 
     public void FocusOn(Vector3 position)
     {
-        targetPosition = position;
-        isFollowing = true;
+        deathTargetPosition = position;
+        isFollowingDeathPoint = true;
     }
 
     public void ParentToCamera(GameObject obj)

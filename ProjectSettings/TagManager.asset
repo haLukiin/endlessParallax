@@ -60,5 +60,23 @@ TagManager:
   - name: New Layer 6
     uniqueID: 3285610459
     locked: 0
+  - name: New Layer 7
+    uniqueID: 2199336623
+    locked: 0
+  - name: New Layer 8
+    uniqueID: 3234867607
+    locked: 0
+  - name: New Layer 9
+    uniqueID: 1515058135
+    locked: 0
+  - name: New Layer 10
+    uniqueID: 992528839
+    locked: 0
+  - name: New Layer 11
+    uniqueID: 2803028943
+    locked: 0
+  - name: New Layer 12
+    uniqueID: 22895621
+    locked: 0
   m_RenderingLayers:
   - Default
