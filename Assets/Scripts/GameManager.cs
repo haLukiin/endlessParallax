@@ -24,15 +24,31 @@ public class GameManager : MonoBehaviour
     public float scoreMultiplier = 10f; // How fast the score increases
     public float gameOverDelay = 1.5f;   // How long to wait before showing Game Over screen
 
-    [Header("Difficulty Scaling")]
-    public float startSpeedMultiplier = 0.5f; // Start at half speed
-    public float speedIncreaseRate = 0.04f;   // How much the speed increases per second
-    public float maxSpeedMultiplier = 4f;     // Higher max speed for more challenge
+    [Header("Difficulty Scaling (Logarithmic)")]
+    public float startSpeedMultiplier = 0.5f;
+    public float speedLogScale = 0.5f;        // Controls how much the log affects speed
+    public float speedTimeFactor = 0.1f;      // Controls how fast time scales inside the log
+    
+    [Header("Spawn Density (Logarithmic)")]
+    public float startGapMultiplier = 1f;
+    public float gapLogScale = 0.2f;          // Controls how much the log affects density
+    public float gapTimeFactor = 0.05f;       // Controls how fast density increases
+
+    [Header("Vertical Gap (Logarithmic)")]
+    public float startVerticalGap = 0f;       // Small value = Large hole with -12 offset
+    public float maxVerticalGap = 8f;         // Large value = Small hole with -12 offset
+    public float mountainBaseOffset = -12f;   // Your specific mountain setup
+    public float verticalGapLogScale = 2.5f;  
+    public float verticalGapTimeFactor = 0.4f;
+    
     public float speedMultiplier { get; private set; } = 0.5f;
+    public float spawnDensityMultiplier { get; private set; } = 1f;
+    public float currentVerticalGap { get; private set; } = 0f;
 
     public static GameManager Instance { get; private set; }
 
     private float currentScore = 0f;
+    private float timeElapsed = 0f;
     private bool isGameOver = false;
     public bool IsCountingDown => isCountingDown;
     private bool isCountingDown = true;
@@ -46,8 +62,11 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        // Reset speed to starting value
+        // Reset multipliers
         speedMultiplier = startSpeedMultiplier;
+        spawnDensityMultiplier = startGapMultiplier;
+        currentVerticalGap = startVerticalGap;
+        timeElapsed = 0f;
 
         // Reset time scale in case it was left at 0 or something else
         Time.timeScale = 1f;
@@ -107,11 +126,17 @@ public class GameManager : MonoBehaviour
     {
         if (!isGameOver && !isCountingDown)
         {
-            // Increase speed multiplier over time
-            if (speedMultiplier < maxSpeedMultiplier)
-            {
-                speedMultiplier += speedIncreaseRate * Time.deltaTime;
-            }
+            timeElapsed += Time.deltaTime;
+
+            // Logarithmic speed increase: V = Vstart + A * log(B * t + 1)
+            speedMultiplier = startSpeedMultiplier + speedLogScale * Mathf.Log(timeElapsed * speedTimeFactor + 1f);
+
+            // Logarithmic gap decrease (density increase): D = Dstart + A * log(B * t + 1)
+            spawnDensityMultiplier = startGapMultiplier + gapLogScale * Mathf.Log(timeElapsed * gapTimeFactor + 1f);
+
+            // Logarithmic vertical gap INCREASE: G = Gstart + A * log(B * t + 1)
+            float verticalIncrease = verticalGapLogScale * Mathf.Log(timeElapsed * verticalGapTimeFactor + 1f);
+            currentVerticalGap = Mathf.Min(maxVerticalGap, startVerticalGap + verticalIncrease);
 
             // Increase score based on time and speed
             currentScore += Time.deltaTime * scoreMultiplier * speedMultiplier;

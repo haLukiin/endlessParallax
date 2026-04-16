@@ -34,8 +34,10 @@ public class SpaceSpawner : MonoBehaviour
         {
             SpawnObject();
             
-            float currentMultiplier = GameManager.Instance != null ? GameManager.Instance.speedMultiplier : 1f;
-            float delay = Random.Range(minSpawnDelay, maxSpawnDelay) / currentMultiplier;
+            float speedMult = GameManager.Instance != null ? GameManager.Instance.speedMultiplier : 1f;
+            float densityMult = GameManager.Instance != null ? GameManager.Instance.spawnDensityMultiplier : 1f;
+            
+            float delay = Random.Range(minSpawnDelay, maxSpawnDelay) / (speedMult * densityMult);
             timer = delay;
         }
     }

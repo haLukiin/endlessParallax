@@ -7,6 +7,7 @@ public class playerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 8f;
     [SerializeField] private float rotationSpeed = 5f;
     [SerializeField] private bool useRotation = false; 
+    [SerializeField] private float flapAnimationSpeed = 0.5f; // New variable to control animation speed
 
     private Rigidbody2D rb;
     private Animator anim; // Lägg till Animator
@@ -20,6 +21,11 @@ public class playerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>(); // Hämta Animator vid start
+        
+        if (anim != null)
+        {
+            anim.speed = flapAnimationSpeed; // Set the speed once at start
+        }
     }
 
     void Update()
