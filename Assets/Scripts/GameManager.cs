@@ -278,8 +278,13 @@ public class GameManager : MonoBehaviour
         // 4. Update UI
         if (highscoreText != null)
         {
-            highscoreText.text = "Current Best: " + highScores[0].ToString();
+            highscoreText.text = "Your Score: " + newScore.ToString();
             highscoreText.gameObject.SetActive(true);
+        }
+
+        if (scoreText != null)
+        {
+            scoreText.gameObject.SetActive(true);
         }
 
         if (topScoresText != null)

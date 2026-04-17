@@ -1728,7 +1728,7 @@ Rigidbody2D:
   m_Mass: 0.0001
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1784,7 +1784,7 @@ SpriteRenderer:
   m_SortingLayerID: -1491938353
   m_SortingLayer: 11
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1573017155516950156, guid: 145abcce393574a4a80392b8d78410e4, type: 3}
+  m_Sprite: {fileID: 2237450425591679811, guid: 736690126bc1ab34588a0336d6a840aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1826,7 +1826,7 @@ MonoBehaviour:
   jumpForce: 8
   rotationSpeed: 5
   useRotation: 0
-  flapAnimationSpeed: 0.8
+  flapAnimationSpeed: 0.9
   gameManager: {fileID: 459283275}
   explosionPrefab: {fileID: 7459955773504946199, guid: 8432474127031b240914d6029de945ca, type: 3}
 --- !u!95 &626913338
@@ -1839,7 +1839,7 @@ Animator:
   m_GameObject: {fileID: 626913330}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c89b68db32290dd4093dd4ae634f0e64, type: 2}
+  m_Controller: {fileID: 9100000, guid: 24e85501ee754964dbc437e542a84178, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1889,7 +1889,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.13, y: 0.89}
+    oldSize: {x: 1.52, y: 1.19}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2275,7 +2275,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4280487411
-  m_fontColor: {r: 0.9529412, g: 0.050980363, b: 0.13640109, a: 1}
+  m_fontColor: {r: 0.43543077, g: 0.9716981, b: 0.89728546, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
