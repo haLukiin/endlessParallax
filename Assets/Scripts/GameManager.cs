@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
         countdownText.text = "1";
         yield return new WaitForSecondsRealtime(1f);
         
-        countdownText.text = "GO!";
+        countdownText.text = "Fly You Fool";
         yield return new WaitForSecondsRealtime(0.5f);
 
         countdownText.gameObject.SetActive(false);

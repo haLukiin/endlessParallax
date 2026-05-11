@@ -37,12 +37,12 @@ public class MeteorFire : MonoBehaviour
         shape.radius = 15f;
 
         // --- Velocity Over Lifetime ---
-        // Justera dessa värden för att styra svansen snett uppåt vänster:
+        // Styr svansen så den pekar bakåt (åt höger) när meteoren rör sig åt vänster:
         var velocity = ps.velocityOverLifetime;
         velocity.enabled = true;
         velocity.space = ParticleSystemSimulationSpace.World;
-        velocity.x = -8f; // Drar svansen åt vänster
-        velocity.y = 16f;   // Drar svansen uppåt
+        velocity.x = 15f; // Drar svansen åt höger (bakåt)
+        velocity.y = 2f;  // Drar svansen svagt uppåt för en rök-effekt
 
         // --- Color over Lifetime ---
         var colorModule = ps.colorOverLifetime;

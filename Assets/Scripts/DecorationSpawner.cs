@@ -4,6 +4,10 @@ public class DecorationSpawner : MonoBehaviour
 {
     [Header("Prefabs")]
     public GameObject[] decorationPrefabs;
+    [SerializeField] private GameObject grimmyPrefab;
+    [SerializeField] private bool grimmyOnGround = true;
+    [SerializeField] private float groundY = -4.5f;
+    [SerializeField] private float grimmySpeed = 2f;
 
     [Header("Spawn Position")]
     public float minSpawnOffset = 18f;
@@ -48,21 +52,44 @@ public class DecorationSpawner : MonoBehaviour
 
     void SpawnDecoration()
     {
-        if (decorationPrefabs == null || decorationPrefabs.Length == 0) return;
+        GameObject prefab = null;
+        bool isGrimmy = false;
 
-        // Pick a random decoration
-        GameObject prefab = decorationPrefabs[Random.Range(0, decorationPrefabs.Length)];
+        // 10% chance to spawn Grimmy if assigned
+        if (grimmyPrefab != null && Random.value < 0.1f)
+        {
+            prefab = grimmyPrefab;
+            isGrimmy = true;
+        }
+        else if (decorationPrefabs != null && decorationPrefabs.Length > 0)
+        {
+            prefab = decorationPrefabs[Random.Range(0, decorationPrefabs.Length)];
+        }
+
+        if (prefab == null) return;
 
         // Calculate spawn position relative to camera
         float cameraX = Camera.main != null ? Camera.main.transform.position.x : transform.position.x;
         float x = cameraX + Random.Range(minSpawnOffset, maxSpawnOffset);
-        float y = Random.Range(minY, maxY);
+        float y = isGrimmy && grimmyOnGround ? groundY : Random.Range(minY, maxY);
 
         Vector3 spawnPos = new Vector3(x, y, 0);
         GameObject obj = Instantiate(prefab, spawnPos, prefab.transform.rotation);
 
-        // Apply random scale
-        float scale = Random.Range(minScale, maxScale);
+        // Ensure it has movement if it doesn't already
+        if (obj.GetComponent<MoveLeft>() == null && obj.GetComponent<SeamCover>() == null)
+        {
+            MoveLeft move = obj.AddComponent<MoveLeft>();
+            // Set speed: use grimmySpeed for Grimmy, 2f for others
+            float speed = isGrimmy ? grimmySpeed : 2f;
+            move.minSpeedX = speed; 
+            move.maxSpeedX = speed;
+        }
+
+        // Apply random scale (wider range for Grimmy to make him look creepier at different distances)
+        float currentMinScale = isGrimmy ? minScale * 0.8f : minScale;
+        float currentMaxScale = isGrimmy ? maxScale * 1.5f : maxScale;
+        float scale = Random.Range(currentMinScale, currentMaxScale);
         obj.transform.localScale = Vector3.one * scale;
 
         // Ensure it's in the background
@@ -70,6 +97,16 @@ public class DecorationSpawner : MonoBehaviour
         if (sr != null)
         {
             sr.sortingOrder = sortingOrder;
+            
+            // If on ground, pivot usually needs to be at the bottom. 
+            // Since we can't easily change pivot of a sprite at runtime without complex logic,
+            // we'll just offset the Y slightly based on scale to keep feet on ground.
+            if (isGrimmy && grimmyOnGround)
+            {
+                // Simple heuristic: adjust Y up by half the scale increase
+                float yOffset = (scale - 1f) * 0.5f; 
+                obj.transform.position += Vector3.up * yOffset;
+            }
         }
 
         // Optional: If you want children to have the same sorting order
