@@ -11,6 +11,7 @@ using UnityEditor;
 public class GameManager : MonoBehaviour
 {
     [Header("UI References")]
+    public GameObject mainMenuCanvas; // Reference to the main menu
     public GameObject gameOverCanvas; // Full Canvas
     public CanvasGroup gameOverCanvasGroup; // Add this for smooth fading
     public TMP_Text quitText;         // "Press Escape to Quit"
@@ -50,8 +51,9 @@ public class GameManager : MonoBehaviour
     private float currentScore = 0f;
     private float timeElapsed = 0f;
     private bool isGameOver = false;
+    private bool isWaitingForStart = true;
     public bool IsCountingDown => isCountingDown;
-    private bool isCountingDown = true;
+    private bool isCountingDown = false;
     private const string TopScoresKey = "TopScores";
 
     void Awake()
@@ -68,8 +70,13 @@ public class GameManager : MonoBehaviour
         currentVerticalGap = startVerticalGap;
         timeElapsed = 0f;
 
-        // Reset time scale in case it was left at 0 or something else
-        Time.timeScale = 1f;
+        // Reset time scale
+        Time.timeScale = 0f;
+        isWaitingForStart = true;
+        isCountingDown = false;
+
+        if (mainMenuCanvas != null)
+            mainMenuCanvas.SetActive(true);
 
         if (gameOverCanvas != null)
             gameOverCanvas.SetActive(false);
@@ -86,7 +93,20 @@ public class GameManager : MonoBehaviour
         if (topScoresText != null)
             topScoresText.gameObject.SetActive(false);
 
+        if (countdownText != null)
+            countdownText.gameObject.SetActive(false);
+
         UpdateScoreText();
+    }
+
+    public void StartGame()
+    {
+        if (!isWaitingForStart) return;
+        
+        isWaitingForStart = false;
+        
+        if (mainMenuCanvas != null)
+            mainMenuCanvas.SetActive(false);
 
         // Start the countdown
         if (countdownText != null)
@@ -96,6 +116,7 @@ public class GameManager : MonoBehaviour
         else
         {
             isCountingDown = false;
+            Time.timeScale = 1f;
         }
     }
 
@@ -306,7 +327,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    void QuitGame()
+    public void QuitGame()
     {
 #if UNITY_EDITOR
         EditorApplication.isPlaying = false;

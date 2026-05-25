@@ -4,13 +4,14 @@ using System.Linq;
 public class playerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float jumpForce = 8f;
+    [SerializeField] private float jumpForce = 10f; // Snappier jump
+    [SerializeField] private float sinkForce = 12f; // Fast descent
     [SerializeField] private float rotationSpeed = 5f;
     [SerializeField] private bool useRotation = false; 
-    [SerializeField] private float flapAnimationSpeed = 0.5f; // New variable to control animation speed
+    [SerializeField] private float flapAnimationSpeed = 0.5f;
 
     private Rigidbody2D rb;
-    private Animator anim; // Lägg till Animator
+    private Animator anim;
     private bool isDead = false;
 
     [Header("References")]
@@ -20,11 +21,11 @@ public class playerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>(); // Hämta Animator vid start
+        anim = GetComponent<Animator>();
         
         if (anim != null)
         {
-            anim.speed = flapAnimationSpeed; // Set the speed once at start
+            anim.speed = flapAnimationSpeed;
         }
     }
 
@@ -49,11 +50,14 @@ public class playerMovement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(horizontalSpeed, jumpForce);
             
-            // Trigga ett enstaka vingslag
             if (anim != null)
             {
                 anim.SetTrigger("Flap");
             }
+        }
+        else if (Input.GetKey(KeyCode.C))
+        {
+            rb.linearVelocity = new Vector2(horizontalSpeed, -sinkForce);
         }
         else
         {
@@ -77,28 +81,21 @@ public class playerMovement : MonoBehaviour
     {
         isDead = true;
 
-        // 1. Tell GameManager to stop all movement and hide other obstacles
         if (gameManager != null)
         {
             gameManager.StopAllMovement(hitObject);
         }
 
-        // 2. Instantiate explosion effect if assigned
         if (explosionPrefab != null)
         {
-            // Spawn the explosion at the player's position. 
-            // We DON'T parent it now because everything else has stopped.
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         }
 
-        // 3. Make Camera focus on the explosion/death point
         CameraFollow cam = Camera.main.GetComponent<CameraFollow>();
         if (cam != null)
         {
             cam.FocusOn(transform.position);
 
-            // Find all background objects and lock them to the camera
-            // so we don't see the "empty void" behind them as we move
             MonoBehaviour[] allScripts = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None);
             foreach (var script in allScripts)
             {
@@ -110,10 +107,8 @@ public class playerMovement : MonoBehaviour
             }
         }
 
-        // Hide the player
         gameObject.SetActive(false);
 
-        // Tell GameManager to show Game Over after the delay
         if (gameManager != null)
             gameManager.GameOver();
     }
