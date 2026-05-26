@@ -107,9 +107,9 @@ public class playerMovement : MonoBehaviour
             }
         }
 
-        gameObject.SetActive(false);
-
         if (gameManager != null)
             gameManager.GameOver();
+
+        gameObject.SetActive(false);
     }
 }
